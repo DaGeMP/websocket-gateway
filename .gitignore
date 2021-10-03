@@ -1,11 +1,10 @@
 HELP.md
 target/
-/.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
 /mvnw
 /mvnw.cmd
-/.mvn/wrapper/maven-wrapper.properties
+/.mvn/wrapper/*
 
 ### IntelliJ IDEA ###
 .idea
