@@ -1,4 +1,4 @@
-# websockets-gateway
+# websocket-gateway
 The aim of this project is to have a simple way to make applications communicate between them in real-time.
 
 For achieving this goal, this project makes use of spring WebSockets with a simple controller that will forward any
@@ -13,7 +13,7 @@ anyone reading this documentation to contribute by providing new and more sophis
 Soon I will provide a running instance server along with a Chat application example using these services.
 
 # How to run
-websockets-gateway is a maven application, it will need maven to be installed. For creating the build run the following 
+websocket-gateway is a maven application, it will need maven to be installed. For creating the build run the following 
 command at the root of the project.
 
 <pre><code>mvn clean install
