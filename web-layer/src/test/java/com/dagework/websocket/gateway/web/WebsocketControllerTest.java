@@ -3,10 +3,10 @@ package com.dagework.websocket.gateway.web;
 import com.dagework.websocket.gateway.service.messaging.Message;
 import com.dagework.websocket.gateway.service.messaging.MessagingService;
 import com.github.dozermapper.core.Mapper;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -21,19 +21,19 @@ class WebsocketControllerTest {
 
     private WebsocketController websocketController;
 
-    @BeforeEach
+    @BeforeMethod
     void setUp() {
         closeable = MockitoAnnotations.openMocks(this);
         this.websocketController = new WebsocketController(mapper, messagingService);
     }
 
-    @AfterEach
+    @AfterMethod
     void tearDown() throws Exception {
         closeable.close();
     }
 
     @Test
-    void testSend() {
+    public void testSend() {
         MessageDTO messageDTO = new MessageDTO("", "", null);
         Message message = new Message("", "", null);
         MessageDTO expected = new MessageDTO("", "", null);
@@ -43,6 +43,6 @@ class WebsocketControllerTest {
 
         MessageDTO actual = websocketController.send("", messageDTO);
 
-        Assertions.assertEquals(expected, actual);
+        Assert.assertEquals(expected, actual);
     }
 }
