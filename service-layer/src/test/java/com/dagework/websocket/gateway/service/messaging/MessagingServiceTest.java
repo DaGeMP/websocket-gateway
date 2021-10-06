@@ -19,7 +19,7 @@ class MessagingServiceTest {
 
         Message actual = messagingService.create(message);
 
-        Assert.assertEquals("bananas", actual.getFrom());
+        Assert.assertEquals("from", actual.getFrom());
         Assert.assertEquals("content", actual.getContent());
         Assert.assertNotNull( actual.getTime());
     }
