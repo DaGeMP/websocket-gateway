@@ -1,9 +1,9 @@
 package com.dagework.websocket.gateway.service.channel;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -17,13 +17,13 @@ class ChannelsServiceTest {
 
     private AutoCloseable closeable;
 
-    @BeforeEach
+    @BeforeMethod
     public void setUp() {
         this.closeable = MockitoAnnotations.openMocks(this);
         this.channelsService = new ChannelsService(codeGenerator);
     }
 
-    @AfterEach
+    @AfterMethod
     public void tearDown() throws Exception {
         closeable.close();
     }
@@ -35,6 +35,6 @@ class ChannelsServiceTest {
 
         Channel channel = channelsService.create();
 
-        Assertions.assertEquals(expected, channel.getId());
+        Assert.assertEquals(expected, channel.getId());
     }
 }

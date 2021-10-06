@@ -25,7 +25,7 @@
 	<properties>
 		<spring.version>5.2.2.RELEASE</spring.version>
 		<dozer.version>6.5.2</dozer.version>
-		<junit.version>5.7.2</junit.version>
+		<testng.version>7.4.0</testng.version>
 		<mockito.version>3.9.0</mockito.version>
 		<java.version>8</java.version>
 	</properties>
@@ -48,15 +48,15 @@
 				<version>${dozer.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.junit.jupiter</groupId>
-				<artifactId>junit-jupiter-api</artifactId>
-				<version>${junit.version}</version>
-				<scope>test</scope>
-			</dependency>
-			<dependency>
 				<groupId>org.mockito</groupId>
 				<artifactId>mockito-core</artifactId>
 				<version>${mockito.version}</version>
+				<scope>test</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.testng</groupId>
+				<artifactId>testng</artifactId>
+				<version>${testng.version}</version>
 				<scope>test</scope>
 			</dependency>
 		</dependencies>

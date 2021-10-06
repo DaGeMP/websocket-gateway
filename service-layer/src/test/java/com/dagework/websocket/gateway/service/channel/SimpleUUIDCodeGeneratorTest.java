@@ -1,17 +1,17 @@
 package com.dagework.websocket.gateway.service.channel;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 class SimpleUUIDCodeGeneratorTest {
 
-    @BeforeEach
+    @BeforeMethod
     void setUp() {
     }
 
-    @AfterEach
+    @AfterMethod
     void tearDown() {
     }
 
@@ -22,7 +22,7 @@ class SimpleUUIDCodeGeneratorTest {
 
         String code = codeGenerator.generate();
 
-        Assertions.assertEquals(expectedLength, code.length());
+        Assert.assertEquals(expectedLength, code.length());
     }
 
     @Test
@@ -32,7 +32,7 @@ class SimpleUUIDCodeGeneratorTest {
 
         String code = codeGenerator.generate();
 
-        Assertions.assertEquals(expectedLength, code.length());
+        Assert.assertEquals(expectedLength, code.length());
     }
 
     @Test
@@ -42,12 +42,12 @@ class SimpleUUIDCodeGeneratorTest {
 
         String code = codeGenerator.generate();
 
-        Assertions.assertEquals(expectedLength, code.length());
+        Assert.assertEquals(expectedLength, code.length());
     }
 
     @Test
     void testGenerateWhenLengthIsHigherThan5_ShouldReturnException() {
-        Assertions.assertThrows(InvalidLengthException.class, () -> {
+        Assert.assertThrows(InvalidLengthException.class, () -> {
             CodeGenerator codeGenerator = new SimpleUUIDCodeGenerator(6);
 
             codeGenerator.generate();
@@ -56,7 +56,7 @@ class SimpleUUIDCodeGeneratorTest {
 
     @Test
     void testGenerateWhenLengthIsLowerThan1_ShouldReturnException() {
-        Assertions.assertThrows(InvalidLengthException.class, () -> {
+        Assert.assertThrows(InvalidLengthException.class, () -> {
             CodeGenerator codeGenerator = new SimpleUUIDCodeGenerator(0);
 
             codeGenerator.generate();

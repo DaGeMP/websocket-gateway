@@ -3,10 +3,10 @@ package com.dagework.websocket.gateway.web;
 import com.dagework.websocket.gateway.service.channel.Channel;
 import com.dagework.websocket.gateway.service.channel.ChannelsService;
 import com.github.dozermapper.core.Mapper;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
@@ -20,13 +20,13 @@ class ChannelsWebControllerTest {
     private AutoCloseable closeable;
     private ChannelsWebController channelsWebController;
 
-    @BeforeEach
+    @BeforeMethod
     public void setUp() {
         this.closeable = MockitoAnnotations.openMocks(this);
         this.channelsWebController = new ChannelsWebController(mapper, channelsService);
     }
 
-    @AfterEach
+    @AfterMethod
     public void tearDown() throws Exception {
         closeable.close();
     }
@@ -40,6 +40,6 @@ class ChannelsWebControllerTest {
 
         ChannelDTO channelDTO = channelsWebController.getChannel();
 
-        Assertions.assertEquals(expected, channelDTO);
+        Assert.assertEquals(expected, channelDTO);
     }
 }
