@@ -8,7 +8,6 @@ on:
     # Publish `master` as Docker `latest` image.
     branches:
       - master
-      - feature/build-docker-image-maven
 
 env:
   IMAGE_NAME: websocket-gateway
