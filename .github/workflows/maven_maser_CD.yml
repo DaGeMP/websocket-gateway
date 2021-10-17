@@ -5,9 +5,8 @@ name: CD Push
 
 on:
   push:
-    branches-ignore:
-      - master
-
+    tags:
+      - '*'
 env:
   IMAGE_NAME: websocket-gateway
 
