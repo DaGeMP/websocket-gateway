@@ -10,7 +10,6 @@ on:
       - '!master'
   create:
     tags:
-      - *
 
 env:
   IMAGE_NAME: websocket-gateway
