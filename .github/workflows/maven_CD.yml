@@ -6,7 +6,8 @@ name: CD Push
 on:
   push:
     # Publish `master` as Docker `latest` image.
-    branches: ['!master']
+    branches-ignore:
+      - master
 env:
   IMAGE_NAME: websocket-gateway
 
