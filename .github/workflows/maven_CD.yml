@@ -8,9 +8,6 @@ on:
     # Publish `master` as Docker `latest` image.
     branches:
       - '!master'
-  create:
-    tags:
-      - v*
 
 env:
   IMAGE_NAME: websocket-gateway
