@@ -5,10 +5,10 @@ name: CD Push
 
 on:
   push:
-    # Publish `master` as Docker `latest` image.
-    branches:
+    branches-ignore:
       - master
-
+    tags:
+      - '*'
 env:
   IMAGE_NAME: websocket-gateway
 
@@ -44,8 +44,6 @@ jobs:
           VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
           # Strip "v" prefix from tag name
           [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
-          # Use Docker `latest` tag convention
-          [ "$VERSION" == "master" ] && VERSION=latest
           echo IMAGE_ID=$IMAGE_ID
           echo VERSION=$VERSION
           docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
