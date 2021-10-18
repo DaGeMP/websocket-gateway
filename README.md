@@ -10,7 +10,7 @@ of one topic. The logic behind the code creation is very simple at the moment (S
 should be enough for small applications although, it cannot ensure not to have collisions. I would like to encourage
 anyone reading this documentation to contribute by providing new and more sophisticated ways to calculate that.
 
-Soon I will provide a running instance server along with a Chat application example using these services.
+Here you have a [running instance](https://websockets-gateway.herokuapp.com/) of the service.
 
 # How to run
 websocket-gateway is a maven application, it will need maven to be installed. For creating the build run the following 
